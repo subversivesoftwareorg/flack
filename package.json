@@ -1,0 +1,33 @@
+{
+  "name": "flack",
+  "description": "Browser extension that floods tracking services with fake data to protect your privacy",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "dev:safari": "wxt -b safari",
+    "build": "wxt build",
+    "build:chrome": "wxt build -b chrome",
+    "build:firefox": "wxt build -b firefox",
+    "build:safari": "wxt build -b safari",
+    "build:edge": "wxt build -b edge",
+    "build:opera": "wxt build -b opera",
+    "build:all": "npm run build:chrome && npm run build:firefox && npm run build:edge && npm run build:opera",
+    "zip": "wxt zip",
+    "zip:chrome": "wxt zip -b chrome",
+    "zip:firefox": "wxt zip -b firefox",
+    "zip:all": "npm run zip:chrome && npm run zip:firefox",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@wxt-dev/module-vue": "^1.0.0",
+    "typescript": "^5.7.0",
+    "vue-tsc": "^2.2.0",
+    "wxt": "^0.20.0"
+  }
+}

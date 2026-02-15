@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.output/
+dist/
+build/
+
+# WXT
+.wxt/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Safari build artifacts
+*.xcodeproj/
+*.xcworkspace/

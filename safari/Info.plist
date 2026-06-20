@@ -5,14 +5,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
+	<key>SFSafariWebExtensionConverterVersion</key>
+	<string>26.5</string>
 	<key>SUFeedURL</key>
 	<string>https://subversivesoftware.org/updates/flack/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>o8LVWN856eET9FIPLD7qHGEDu6+7s9amIf+TH2pIEHs=</string>
-	<key>SFSafariWebExtensionConverterVersion</key>
-	<string>26.5</string>
 </dict>
 </plist>

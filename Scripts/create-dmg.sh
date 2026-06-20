@@ -21,6 +21,23 @@ if [ "${1:-}" = "--skip-notarize" ]; then
     SKIP_NOTARIZE=true
 fi
 
+# ── Notarization credentials ─────────────────────────────────────
+if [ "$SKIP_NOTARIZE" = false ]; then
+    TEAM_ID="${TEAM_ID:-84CC987JU3}"
+
+    if [ -z "${APPLE_ID:-}" ]; then
+        printf "Apple ID (email) for notarization: "
+        read -r APPLE_ID
+    fi
+    if [ -z "${APP_PASSWORD:-}" ]; then
+        printf "App-specific password: "
+        stty -echo
+        read -r APP_PASSWORD
+        stty echo
+        echo ""
+    fi
+fi
+
 echo "=== Flack Build Pipeline ==="
 
 # --- Step 1: Build WXT Safari extension ---
@@ -331,14 +348,21 @@ if [ "$SKIP_NOTARIZE" = true ]; then
 else
     echo ""
     echo "--- Step 9: Notarize ---"
-    xcrun notarytool submit "$DMG_PATH" \
-        --apple-id "${APPLE_ID}" \
-        --team-id "${TEAM_ID}" \
-        --password "${APP_PASSWORD}" \
-        --wait
+    if xcrun notarytool submit "$DMG_PATH" \
+        --apple-id "$APPLE_ID" \
+        --team-id "$TEAM_ID" \
+        --password "$APP_PASSWORD" \
+        --wait \
+        --timeout 15m; then
 
-    xcrun stapler staple "$DMG_PATH"
-    echo "Notarization complete."
+        xcrun stapler staple "$DMG_PATH"
+        echo "Notarization complete."
+    else
+        echo ""
+        echo "WARNING: Notarization did not complete within 15m."
+        echo "Check status: xcrun notarytool history --apple-id $APPLE_ID --team-id $TEAM_ID --password YOUR_PASSWORD"
+        echo "Then staple:  xcrun stapler staple $DMG_PATH"
+    fi
 fi
 
 # --- Step 10: Sparkle appcast ---

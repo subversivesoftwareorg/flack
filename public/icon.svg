@@ -6,5 +6,13 @@
     </linearGradient>
   </defs>
   <rect x="8" y="8" width="112" height="112" rx="24" fill="url(#grad)"/>
-  <text x="64" y="85" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">F</text>
+  <!-- Fighter jet silhouette banking upper-left -->
+  <polygon points="24,18 75,33 48,44 58,56 44,48 33,75" fill="white"/>
+  <!-- Chaff/flares scattering lower-right -->
+  <rect x="68" y="68" width="7" height="5" rx="1" fill="white" opacity="0.95" transform="rotate(20,71.5,70.5)"/>
+  <rect x="82" y="74" width="5" height="4" rx="1" fill="white" opacity="0.75" transform="rotate(-25,84.5,76)"/>
+  <rect x="76" y="86" width="6" height="4" rx="1" fill="white" opacity="0.6" transform="rotate(35,79,88)"/>
+  <rect x="92" y="84" width="4" height="3" rx="1" fill="white" opacity="0.5" transform="rotate(-10,94,85.5)"/>
+  <rect x="86" y="96" width="5" height="3" rx="1" fill="white" opacity="0.38" transform="rotate(45,88.5,97.5)"/>
+  <rect x="98" y="98" width="3" height="3" rx="1" fill="white" opacity="0.25" transform="rotate(-20,99.5,99.5)"/>
 </svg>

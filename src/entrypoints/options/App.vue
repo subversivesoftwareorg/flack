@@ -57,7 +57,7 @@ async function handleReset() {
   <div class="options-page">
     <header>
       <div class="logo">
-        <span class="logo-icon">F</span>
+        <img class="logo-icon" src="/icon.svg" alt="Flack">
         <h1>Flack Settings</h1>
       </div>
       <span v-if="saved" class="saved-indicator">Saved</span>

@@ -74,7 +74,7 @@ async function handleResetStats() {
   <div class="popup">
     <header>
       <div class="logo">
-        <span class="logo-icon">F</span>
+        <img class="logo-icon" src="/icon.svg" alt="Flack">
         <h1>Flack</h1>
       </div>
       <p class="tagline">Tracking Data Poisoner</p>

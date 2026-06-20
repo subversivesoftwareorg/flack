@@ -1,0 +1,92 @@
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    cursor: default;
+}
+
+:root {
+    color-scheme: light dark;
+    --spacing: 20px;
+    --accent: #667eea;
+    --accent-end: #764ba2;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 calc(var(--spacing) * 2);
+    height: 100%;
+    font: -apple-system-short-body;
+    text-align: center;
+}
+
+.icon-container {
+    margin-bottom: 4px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    opacity: 0.6;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+body:not(.state-on, .state-off) :is(.state-on, .state-off) {
+    display: none;
+}
+
+body.state-on :is(.state-off, .state-unknown) {
+    display: none;
+}
+
+body.state-off :is(.state-on, .state-unknown) {
+    display: none;
+}
+
+body.state-on .state-on {
+    color: #34c759;
+}
+
+button {
+    font-size: 14px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-end));
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.footer {
+    margin-top: 16px;
+    font-size: 11px;
+    opacity: 0.4;
+}

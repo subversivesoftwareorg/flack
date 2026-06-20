@@ -27,6 +27,9 @@ npm-debug.log*
 .env
 .env.local
 
+# Review files
+WEEKLY_REVIEW*
+
 # Safari build artifacts
 *.xcodeproj/
 *.xcworkspace/
